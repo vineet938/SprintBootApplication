@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:13
 EXPOSE 8080
-ADD target/jsp-boot-tst.war jsp-boot-tst.war
-ENTRYPOINT {"java","-war","/jsp-boot-tst.war"}
+ADD target/*.war jsp-boot-tst.war
+ENTRYPOINT ["java","-jar", "/jsp-boot-tst.war"]
